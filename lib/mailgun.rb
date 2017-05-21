@@ -9,8 +9,7 @@ module Mailgun
                      text:    'We are really excited to get you onboard on out platform.'
                     }
     result = mg_client.send_message('sandbox52762ccd483f408f838b304f86689bd7.mailgun.org', message_params).to_h!
-    message_id = result['id']
-    message = result['message']
+    result
   end
 
   def fetch_emails(email="rahul12345@yopmail.com")

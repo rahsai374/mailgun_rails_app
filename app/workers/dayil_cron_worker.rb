@@ -1,6 +1,6 @@
 class DayilCronWorker
   include Sidekiq::Worker
-
+  include Mailgun
   def perform(*args)
     send_reminder_for_unconfirmed_account
   end
@@ -11,6 +11,7 @@ class DayilCronWorker
       start_date = (Time.zone.now - 1.days).beginning_of_day
       end_date = Time.zone.now#(Time.zone.now - 2.days).end_of_day
       User.pending_confirmation(start_date, end_date).each do  |user|
+        next if check_suppression_list(user.email)
         UserMailer.send_reminder_email(user.email).deliver
       end
     end

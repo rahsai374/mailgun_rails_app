@@ -7,7 +7,9 @@ Things you may want to cover:
 
 * Ruby version
 
-* System dependencies
+* System dependencies : Redis
+
+to install redis follow this: https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-redis-on-ubuntu-16-04
 
 * Configuration
 
@@ -22,3 +24,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+

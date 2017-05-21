@@ -36,6 +36,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'mailgun-ruby', '~>1.1.6'
 gem 'sidekiq'
+require 'rest-client'
 %w[rspec-core rspec-expectations rspec-mocks rspec-rails rspec-support].each do |lib|
   gem lib, :git => "https://github.com/rspec/#{lib}.git", :branch => 'master'
 end
